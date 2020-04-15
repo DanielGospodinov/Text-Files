@@ -19,11 +19,14 @@ namespace Problem4
             {
                 using (reader2)
                 {
-                    string line1 = reader1.ReadLine();
-                    string line2 = reader2.ReadLine();
+                    string line1 = string.Empty;
+                    string line2 = string.Empty;
 
-                    while (line1 != null || line2 != null)
+                    while (!reader1.EndOfStream) //(line1 != null || line2 != null)
                     {
+                        line1 = reader1.ReadLine();
+                        line2 = reader2.ReadLine();
+
                         if (line1 == line2)
                         {
                             sameLines++;
@@ -31,10 +34,7 @@ namespace Problem4
                         else
                         {
                             diffLines++;
-                        }
-
-                        line1 = reader1.ReadLine();
-                        line2 = reader2.ReadLine();
+                        } 
                     }
                 }
             }
